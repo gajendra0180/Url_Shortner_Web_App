@@ -11,7 +11,7 @@ const app = express();
 
 dotenv.config({ path: "./config.env" });
 
-const DB =process.env.DATABASE
+const DB = process.env.DATABASE
 
 mongoose
   .connect(DB)
