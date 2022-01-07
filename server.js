@@ -8,12 +8,12 @@ mongoose.connect("mongodb://localhost/urlShortner", {
   useUnifiedTopology: true,
 });
 
-app.set("view engine", "ejs");
+app.set("view engine", "hbs");
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", async (req, res) => {
   const shortUrls = await ShortUrl.find();
-  res.render("index.ejs", { shortUrls: shortUrls });
+  res.render("index.hbs", { shortUrls: shortUrls });
 });
 
 app.post("/shortUrls", async (req, res) => {

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -36,15 +35,15 @@
           </tr>
         </thead>
         <tbody>
-          <% shortUrls.forEach(shortUrl => {%>
-          <tr>
-            <td>
-              <a href="<%= shortUrl.fullUrl %>"><%= shortUrl.fullUrl %></a>
-            </td>
-            <td><a href="<%= shortUrl.shortUrl%>"><%= shortUrl.shortUrl%></a></td>
-            <td><%= shortUrl.clicks%></td>
-          </tr>
-          <% }); %>
+          {{#each shortUrls}}
+            <tr>
+              <td>
+                <a href="{{this.fullUrl}}">{{this.fullUrl}}</a>
+              </td>
+              <td><a href="{{this.shortUrl}}">{{this.shortUrl}}</a></td>
+              <td>{{this.clicks}}</td>
+            </tr>
+          {{/each}}
         </tbody>
       </table>
     </div>
